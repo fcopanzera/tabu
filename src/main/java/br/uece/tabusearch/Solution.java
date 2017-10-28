@@ -19,12 +19,12 @@ public interface Solution {
 	 * Is the same value returned by the {@link Solution} objective function
 	 * @return the value of this solution
 	 */
-	Double getValue();
+	Integer getValue();
 	
 	/**
 	 * Get the neighbors of this solution
 	 * @return the neighbors of this solution
 	 */
-	List<Solution> getNeighbors();
+	List<TabuSolution> getNeighbors();
 	
 }

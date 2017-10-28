@@ -3,15 +3,15 @@ package br.uece.tabusearch;
 import java.util.List;
 import java.util.ArrayList;
 
-public TabuPeriodSolution {
+public class TabuPeriodSolution {
 	
-	private Double production;
+	private Integer production;
 
-	private Double remanufacturation;
+	private Integer remanufacturation;
 
 	private List<Integer> readyItemsToStock = new ArrayList<>();
 
-	private Double usedItemsToStock;
+	private Integer usedItemsToStock;
 
 	private List<Integer> itemsDelivered = new ArrayList<>();
 
@@ -24,19 +24,19 @@ public TabuPeriodSolution {
 
 	}
 
-	public Double getProduction() {
+	public Integer getProduction() {
 		return this.production;
 	}
 
-	public void setProduction(Double production) {
+	public void setProduction(Integer production) {
 		this.production = production;
 	}
 
-	public Double getRemanufacturation() {
+	public Integer getRemanufacturation() {
 		return this.remanufacturation;
 	}
 
-	public void setRemanufacturation(Double remanufacturation) {
+	public void setRemanufacturation(Integer remanufacturation) {
 		this.remanufacturation = remanufacturation;
 	}
 
@@ -48,11 +48,11 @@ public TabuPeriodSolution {
 		this.readyItemsToStock = readyItemsToStock;
 	}
 
-	public Double getUsedItemsToStock() {
+	public Integer getUsedItemsToStock() {
 		return this.usedItemsToStock;
 	}
 
-	public void setUsedItemsToStock(Double usedItemsToStock) {
+	public void setUsedItemsToStock(Integer usedItemsToStock) {
 		this.usedItemsToStock = usedItemsToStock;
 	}
 

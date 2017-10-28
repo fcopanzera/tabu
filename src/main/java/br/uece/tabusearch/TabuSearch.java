@@ -39,7 +39,7 @@ public class TabuSearch {
 		Integer currentIteration = 0;
 		while (!stopCondition.mustStop(++currentIteration, bestSolution)) {
 			
-			List<Solution> candidateNeighbors = currentSolution.getNeighbors();
+			/*List<Solution> candidateNeighbors = currentSolution.getNeighbors();
 			List<Solution> solutionsInTabu = IteratorUtils.toList(tabuList.iterator());
 			
 			Solution bestNeighborFound = solutionLocator.findBestNeighbor(candidateNeighbors, solutionsInTabu);
@@ -50,7 +50,7 @@ public class TabuSearch {
 			tabuList.add(currentSolution);
 			currentSolution = bestNeighborFound;
 			
-			tabuList.updateSize(currentIteration, bestSolution);
+			tabuList.updateSize(currentIteration, bestSolution);*/
 		}
 		
 		return bestSolution;

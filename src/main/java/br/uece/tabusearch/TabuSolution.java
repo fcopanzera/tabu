@@ -3,27 +3,43 @@ package br.uece.tabusearch;
 import java.util.List;
 import java.util.ArrayList;
 
-public TabuSolution implements Solution {
+public class TabuSolution implements Solution {
 	
-	private Double value;
+	private Integer value;
 
 	private List<TabuPeriodSolution>  periodSolutions = new ArrayList<>();
 
 	public TabuSolution() {
-
+		value = 0;
 	}
 
-	/**
-	 * Get the value of this solution.<br>
-	 * Is the same value returned by the {@link Solution} objective function
-	 * @return the value of this solution
-	 */
-	public Double getValue() {
+	public Integer getValue() {
+		this.calculateValue();
 		return this.value;
 	}
-	
-	public void setValue(Double value) {
-		this.value = value;
+
+	private void calculateValue() {
+		for (Integer period = 0; period < ParametersConfig.NUMER_PERIODS; period ++) {
+			value += ParametersConfig.UNIT_PRODUCTION_COST * this.periodSolutions.get(period).getProduction();
+			value += ParametersConfig.UNIT_REMANUFACTURATION_COST * this.periodSolutions.get(period).getRemanufacturation();
+
+			if (this.periodSolutions.get(period).getProduction() > 0) {
+				value += ParametersConfig.FIXED_PRODUCTION_COST;
+			}
+
+			if (this.periodSolutions.get(period).getRemanufacturation() > 0) {
+				value += ParametersConfig.FIXED_REMANUFACTURATION_COST;
+			}
+
+			for (Integer i = 0; i < this.periodSolutions.get(period).getReadyItemsToStock().size(); i++) {
+				value += this.periodSolutions.get(period).getReadyItemsToStock().get(i)
+						* ParametersConfig.READY_ITEM_STORAGE_COST[i];
+			}
+
+			value += this.periodSolutions.get(period).getUsedItemsToStock() * ParametersConfig.USED_ITEM_STORAGE_COST;
+
+			//TODO: Calular los costos del ruteo
+		}
 	}
 
 	public List<TabuPeriodSolution> getPeriodSolutions() {
@@ -34,7 +50,7 @@ public TabuSolution implements Solution {
 		this.periodSolutions = periodSolutions;
 	}
 
-	public List<Solution> getNeighbors() {
+	public List<TabuSolution> getNeighbors() {
 		return new ArrayList<TabuSolution>();
 	}
 }
