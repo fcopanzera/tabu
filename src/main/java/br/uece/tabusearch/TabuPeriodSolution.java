@@ -17,8 +17,6 @@ public class TabuPeriodSolution {
 
 	//TODO: definir matiz de traslado del vehiculo entre los clientes
 
-	//TODO: definir array de carga del vehiculo previo a realizar cada entrega.
-
 
 	public TabuPeriodSolution() {
 

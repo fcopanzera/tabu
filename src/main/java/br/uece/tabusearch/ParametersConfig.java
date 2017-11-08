@@ -2,15 +2,15 @@ package br.uece.tabusearch;
 
 public class ParametersConfig {
 
-	public static final Integer NUMER_PERIODS = 4;
+	public static final Integer NUMBER_PERIODS = 4;
 
-	public static final Integer NUMER_CLIENTS = 2;
+	public static final Integer NUMBER_CLIENTS = 2;
 
 	public static final Integer UNIT_PRODUCTION_COST = 0;
 
 	public static final Integer UNIT_REMANUFACTURATION_COST = 0;
 
-	public static final Integer NUMER_VEHICLES = 2;
+	public static final Integer NUMBER_VEHICLES = 2;
 
 	public static final Integer FIXED_PRODUCTION_COST = 0;
 

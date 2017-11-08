@@ -19,7 +19,7 @@ public class TabuSolution implements Solution {
 	}
 
 	private void calculateValue() {
-		for (Integer period = 0; period < ParametersConfig.NUMER_PERIODS; period ++) {
+		for (Integer period = 0; period < ParametersConfig.NUMBER_PERIODS; period ++) {
 			value += ParametersConfig.UNIT_PRODUCTION_COST * this.periodSolutions.get(period).getProduction();
 			value += ParametersConfig.UNIT_REMANUFACTURATION_COST * this.periodSolutions.get(period).getRemanufacturation();
 
